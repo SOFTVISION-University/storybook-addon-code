@@ -1,2 +1,2 @@
 
-export function withCode<T>(code: string, type?: string): void;
+export function withCode(code: string, type: string): any;
