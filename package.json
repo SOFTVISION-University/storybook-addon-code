@@ -1,7 +1,7 @@
 {
-  "name": "storybook-addon",
+  "name": "storybook-addon-code-highlighter",
   "version": "1.0.0",
-  "description": "A storybook addon for the css style",
+  "description": "A storybook addon that display any type of code highlighted with Prismjs",
   "keywords": [
     "addon",
     "storybook",
