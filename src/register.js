@@ -1,10 +1,10 @@
 import React from 'react';
 import addons from '@storybook/addons';
 import Prism from 'prismjs';
-import '../node_modules/prismjs/components/prism-typescript.js';
-import '../node_modules/prismjs/components/prism-sass.js';
+import 'prismjs/components/prism-typescript.js';
+import 'prismjs/components/prism-sass.js';
 
-import '../node_modules/prismjs/themes/prism.css';
+import 'prismjs/themes/prism.css';
 
 class Code extends React.Component {
   constructor(props, context) {
