@@ -14,7 +14,8 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build": "npm run clean & babel -d ./dist ./src",
-    "clean": "rm -rf ./dist"
+    "clean": "rm -rf ./dist",
+    "prepublish": "npm run build"
   },
   "author": "Ionascu Cosmin",
   "license": "MIT",
