@@ -1,6 +1,6 @@
 {
-  "name": "storybook-addon-code-highlighter",
-  "version": "1.0.0",
+  "name": "storybook-addon-code",
+  "version": "0.0.1",
   "description": "A storybook addon that display any type of code highlighted with Prismjs",
   "keywords": [
     "addon",
@@ -17,7 +17,7 @@
     "clean": "rm -rf ./dist",
     "prepublish": "npm run build"
   },
-  "author": "Ionascu Cosmin",
+  "author": "SoftVision",
   "license": "MIT",
   "devDependencies": {
     "@storybook/react": "^3.2.3",
