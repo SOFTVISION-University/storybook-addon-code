@@ -8,7 +8,6 @@ import  withCode  from '../src';
 import { Button, Welcome } from '@storybook/react/demo';
 const style = require('raw-loader!./style.scss');
 const typescript  = require('./test.tsx');
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
 storiesOf('Button', module)
   .addDecorator(withCode(typescript, 'typescript'))
