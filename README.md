@@ -1,5 +1,5 @@
 # storybook-addon-code
-![React Storybook code addon](https://preview.ibb.co/bMJ4uv/Screenshot_from_2017_08_11_09_39_30.png)
+![React Storybook code addon](./assets/info.gif)
 
 
 A Storybook addon enabling to show off code samples in the Storybook panel for your stories in [Storybook](https://storybook.js.org).
