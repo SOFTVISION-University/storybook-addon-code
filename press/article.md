@@ -1,14 +1,19 @@
 # Introduction
 
-In the recent react project we needed an environment to create, style and test our components without having a server-side backend code. We decided to use storybook that allows us to develop UI components outside your app and allow other people in your team to work on them. 
+In the recent react project we needed an environment to create, style and test our components without having a server-side backend code. We decided to use storybook that allows us to develop UI components outside the app and allow other people in your team to work on them. 
 
-The most important benefits of using storybook are :
+We really enjoy using React Storybook because:
 1. Completely isolate the environment for your components
 2. HMR — hot module replacement
 3. Support for CSS
-4. Multiple add-ons like accessibility, readme etc
+4. Multiple add-ons like: 
+    + [Accessibility](https://github.com/joscha/storybook-addon-i18n-tools)
+    + [CSS regression](https://github.com/tsuyoshiwada/storybook-chrome-screenshot)
+    + [Snapshot testing of React components](https://github.com/storybooks/storybook/tree/master/addons/storyshots)
+    + [Knobs allow you to edit React props dynamically](https://github.com/storybooks/storybook/tree/master/addons/knobs)
 
-After using storybook in our project for a while,  we needed a way to display the CSS code samples that the component used inside the storybook panel, after looking on the internet we didn't find anything, so we decided to create our own add-on called storybook-addon-code. 
+After using storybook in our project for a while,  we needed a way to display the CSS code samples that the component used inside the storybook panel, after doing our fair share of research into existing solutions we've came up empty, so we decided to create our own add-on called [storybook-addon-code](https://github.com/tuchk4/storybook-readme). 
+
 # How it works
 
 Before we get started, you need to install react storybook and storybook-addon-code.
@@ -24,7 +29,7 @@ CodeAddon.setTabs([
 ]);
 ```
 ### Note:
-setTab function accept and object like {label: 'Sass', type:'sass'} or if you want to have multiple tabs you can pass an array with multiple objects. The label will pe displayed in the Storybook panel.
+``setTab`` function accept and object like ``{label: 'Sass', type:'sass'}`` or if you want to have multiple tabs you can pass an array with multiple objects. The label will pe displayed in the Storybook panel.
 
 
 Then write your stories like this:
@@ -63,23 +68,25 @@ The plugin has a wide variety of built-in support for common Web programming lan
 
 # Anatomy of a Storybook plugin
 
-It turns out developing our custom React Storybook plugin wasn’t that all complicated. You can even go and build out your own plugins if you feel the need to.
+It turns out developing our custom React Storybook plugin wasn’t that all complicated. You can too, very easily, build your own plugins if you feel the need to.
 
-We took the following steps to build this plugin:
+On a high level, this is how we've build our own:
 1. We've created a top level React component that gets displayed in Storybook panel and shows off the code samples.
-2. Created a function 'withCode' that when is called with the code that you want to display a message is emitted through a specific channel name. The channel name is set dynamically based on the language that you want to display on the storybook panel.
+2. Created a decorator function ``withCode``.This function is used to decorate any stories that need source code info being displayed along side them.Technically speaking, when ``withCode`` is called with the code that you want to display a message is emitted through a specific channel name. The channel name is set dynamically based on the language that you want to display on the storybook panel.
 3. Created a react component that listens to that specific name and calls a function that renders the code received as a string to display.
-4.We used PrismJS js for code highlighting and can be used with various code samples like CSS, typescript javascript, HTML etc.
+4.We used [PrismJS](http://prismjs.com/) for code highlighting and can be used with various code samples like CSS, Typescript Javascript, HTML etc.
 
 ![React Storybook code addon](./assets/diagram.png)
 
-For more details on how to build a storybook addon, access to official [tutorial](https://storybook.js.org/addons/writing-addons/) .
+For more details on how to build a storybook addon, access the official [tutorial](https://storybook.js.org/addons/writing-addons/) .
 
 
 
 # Future development
-We plan to develop new features and one of the most important is to support markdown files, if you have any suggestions or requests for new languages ....
+We would like to see at least 2 features added to it in the near and medium term:
 
+1. Support for displaying markdown content alongside the component. Usefull for displaying extra info alongside the component being showcased, it would allow us to get rid of an extra plugin like [withReadme](https://github.com/tuchk4/storybook-readme).
+2. Extend the built in language collection with additional languages
 We are opened to Pull Requests, so please don’t hesitate to get involved!
 
 If you like this plugin and find it useful in your day to day work please don’t hesitate to give us a little Github star or tweet about it!
