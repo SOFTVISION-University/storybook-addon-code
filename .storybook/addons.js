@@ -4,6 +4,6 @@ import '@storybook/addon-actions/register';
 import '@storybook/addon-links/register';
 import * as CodeAddon from '../src/register';
 CodeAddon.setTabs([
-    { label: 'Sass', type: 'sass' },
-    { label: 'Typescript', type: 'typescript' }
+    { label: 'Css', type: 'css' },
+    { label: 'JavaScript', type: 'js' }
 ]);
