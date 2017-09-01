@@ -1,24 +1,31 @@
 # Introduction
 
-In the recent react project we needed an environment to create, style and test our components without having a server-side backend code. We decided to use storybook that allows us to develop UI components outside the app and allow other people in our team to work on them. 
+[React Storybook](https://storybook.js.org/) is a javascript library for React, React Native and Vue js where the engineers can develop,design and test the UI components outside your app in an isolated environment.In the recent React project we needed the advantages that Storybook offer and we decided to use it.
+The major advantage was that this allows us to develop UI components outside the app and allow other people in our team to work on them.
+In this article we are offering the details of a solution we created for a need that is not covered by React Storybook - offering a preview of the styling code used inside various components.
 
-We really enjoy using React Storybook because:
+React Storybook ,for those who don't know, has many features including::
 1. Completely isolate the environment for your components
 2. HMR — hot module replacement
-3. Support for CSS
+3. Clean and fast user interface
 4. Multiple add-ons like: 
     + [Accessibility](https://github.com/joscha/storybook-addon-i18n-tools)
     + [CSS regression](https://github.com/tsuyoshiwada/storybook-chrome-screenshot)
     + [Snapshot testing of React components](https://github.com/storybooks/storybook/tree/master/addons/storyshots)
     + [Knobs allow you to edit React props dynamically](https://github.com/storybooks/storybook/tree/master/addons/knobs)
 
-After using storybook in our project for a while,  we needed a way to display the CSS code samples that the component used inside the storybook panel.After doing our fair share of research into existing solutions we've came up empty, so we decided to create our own add-on called [storybook-addon-code](https://github.com/SOFTVISION-University/storybook-addon-code). 
+Just visit the [React Storybook](https://storybook.js.org/addons/addon-gallery/) for full list of features.
+
+# Why another add-on
+
+Recently, on our current, project we come up with a  needed to display the CSS code samples inside the Storybook panel along with the React component. After doing our fair share of research into existing add-ons mentioned earlier we've come up empty.
+So we decided to create our own add-on called [storybook-addon-code](https://github.com/SOFTVISION-University/storybook-addon-code) that not only displays CSS code but support other languages like javascript, HTML, typescript etc. 
 
 # How it works
 
 Before we get started, you need to install react storybook and storybook-addon-code.
 
-In your storybook config folder create a addons.js and add the following code:
+In your Storybook config folder create a addons.js and add the following code:
 
 ```js
 import '@storybook/addon-actions/register';
@@ -53,16 +60,13 @@ storiesOf('Button', module)
 # Supported languages
 The plugin has a wide variety of built-in support for common Web programming languages. The most common built-in languages includes:
 
-+ clike
 + css
 + html
 + javascript
 + scss
-+ markup
 + mathml 
 + sass
 + svg 
-+ typesript 
 + typescript 
 + xml 
 
@@ -71,14 +75,14 @@ The plugin has a wide variety of built-in support for common Web programming lan
 It turns out developing our custom React Storybook plugin wasn’t that all complicated. You can too, very easily, build your own plugins if you feel the need to.
 
 On a high level, this is how we've build our own:
-1. We've created a top level React component ``Addon Code`` that gets displayed in Storybook panel and shows off the code samples.
+1. We've created a top level React component ``Code Addon`` that gets displayed in Storybook panel and shows off the code samples.
 2. Created a decorator function ``withCode``.This function is used to decorate any stories that need source code info being displayed along side them. ``withCode`` has 2 parameter, source code of the file to display and the type of the file. When is called the function emit a message through a channel that is created dynamically based on the language type.  
-4. ``Addons Code`` component listens to that specific channel name and calls a function that renders a text with the received code properly formatted.
-5.We used [PrismJS](http://prismjs.com/) for code highlighting and because it can be used with various code samples like CSS, Typescript Javascript, HTML etc.
+4. ``Code Addon`` component listens to that specific channel name and calls a function that renders a text with the received code properly formatted.
+5.We used [PrismJS](http://prismjs.com/) for code highlighting and because it can be used with various code samples like CSS, Typescript, Javascript, HTML etc.
 
 ![React Storybook code addon](../assets/diagram.png)
 
-For more details on how to build a storybook addon, access the official [tutorial](https://storybook.js.org/addons/writing-addons/) .
+For more details on how to build a Storybook addon, access the official [tutorial](https://storybook.js.org/addons/writing-addons/) .
 
 
 
