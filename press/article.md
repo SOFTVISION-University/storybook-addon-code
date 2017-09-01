@@ -48,7 +48,7 @@ storiesOf('Button', module)
       <Button onClick={action('clicked')}>Hello Button</Button>
     )
 ```
-![React Storybook code addon](./assets/info2.gif)
+![React Storybook code addon](../assets/info2.gif)
 
 # Supported languages
 The plugin has a wide variety of built-in support for common Web programming languages. The most common built-in languages includes:
@@ -76,7 +76,7 @@ On a high level, this is how we've build our own:
 4. ``Addons Code`` component listens to that specific channel name and calls a function that renders a text with the received code properly formatted.
 5.We used [PrismJS](http://prismjs.com/) for code highlighting and because it can be used with various code samples like CSS, Typescript Javascript, HTML etc.
 
-![React Storybook code addon](./assets/diagram.png)
+![React Storybook code addon](../assets/diagram.png)
 
 For more details on how to build a storybook addon, access the official [tutorial](https://storybook.js.org/addons/writing-addons/) .
 
