@@ -16,7 +16,7 @@ React Storybook ,for those who don't know, has many features including::
 
 Just visit the [React Storybook](https://storybook.js.org/addons/addon-gallery/) for full list of features.
 
-#Why another add-on
+# Why another add-on
 
 Recently, on our current, project we come up with a  needed to display the CSS code samples inside the Storybook panel along with the React component. After doing our fair share of research into existing add-ons mentioned earlier we've come up empty.
 So we decided to create our own add-on called [storybook-addon-code](https://github.com/SOFTVISION-University/storybook-addon-code) that not only displays CSS code but support other languages like javascript, HTML, typescript etc. 
