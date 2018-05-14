@@ -1,12 +1,16 @@
 {
   "name": "storybook-addon-code",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A storybook addon that display any type of code highlighted with Prismjs",
   "keywords": [
     "addon",
     "storybook",
     "code"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SOFTVISION-University/storybook-addon-code.git"
+  },
   "main": "./dist/index.js",
   "types": "./typings/index.d.ts",
   "scripts": {
