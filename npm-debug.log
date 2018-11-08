@@ -1,0 +1,29 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/x/s/node-v6.7.0-linux-x64/bin/node',
+1 verbose cli   '/x/s/node/bin/npm',
+1 verbose cli   'run',
+1 verbose cli   'commit',
+1 verbose cli   '-m',
+1 verbose cli   'Add article' ]
+2 info using npm@3.10.3
+3 info using node@v6.7.0
+4 verbose stack Error: missing script: commit
+4 verbose stack     at run (/x/s/node-v6.7.0-linux-x64/lib/node_modules/npm/lib/run-script.js:151:19)
+4 verbose stack     at /x/s/node-v6.7.0-linux-x64/lib/node_modules/npm/lib/run-script.js:61:5
+4 verbose stack     at /x/s/node-v6.7.0-linux-x64/lib/node_modules/npm/node_modules/read-package-json/read-json.js:356:5
+4 verbose stack     at checkBinReferences_ (/x/s/node-v6.7.0-linux-x64/lib/node_modules/npm/node_modules/read-package-json/read-json.js:320:45)
+4 verbose stack     at final (/x/s/node-v6.7.0-linux-x64/lib/node_modules/npm/node_modules/read-package-json/read-json.js:354:3)
+4 verbose stack     at then (/x/s/node-v6.7.0-linux-x64/lib/node_modules/npm/node_modules/read-package-json/read-json.js:124:5)
+4 verbose stack     at /x/s/node-v6.7.0-linux-x64/lib/node_modules/npm/node_modules/read-package-json/read-json.js:311:12
+4 verbose stack     at /x/s/node-v6.7.0-linux-x64/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:78:16
+4 verbose stack     at tryToString (fs.js:455:3)
+4 verbose stack     at FSReqWrap.readFileAfterClose [as oncomplete] (fs.js:442:12)
+5 verbose cwd /home/cosminionascu/workspace/storybook-addon
+6 error Linux 4.4.0-92-generic
+7 error argv "/x/s/node-v6.7.0-linux-x64/bin/node" "/x/s/node/bin/npm" "run" "commit" "-m" "Add article"
+8 error node v6.7.0
+9 error npm  v3.10.3
+10 error missing script: commit
+11 error If you need help, you may report this error at:
+11 error     <https://github.com/npm/npm/issues>
+12 verbose exit [ 1, true ]
